@@ -51,8 +51,10 @@ end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
-  if arr.length == 0
+  if (arr.length == 0) && (n!=0)
     return false
+  elsif (arr.length == 0) && (n==0)
+    return true
   end
   
   for i in 0..arr.length-1
@@ -75,9 +77,11 @@ end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+  expr = 'aeiouAEIOU#0-9\s\?\/\:\!\,\+\-\)\(\=\@\.\#\_\-'
   case s.to_s
   #when (((/\b[^aoiue]/) || (/\b[^AOIUE]/)) && (/\b[a-zA-Z]/) && (/\b^#/)&& (/\b[^0-9]/))
-  when /^([^aeiouAEIOU#0-9\s\?\/\:\!\,\+\-\)\(\=\@\.\#\_\-])/
+  #when /^([^aeiouAEIOU#0-9\s\?\/\:\!\,\+\-\)\(\=\@\.\#\_\-])/
+  when /^([^#{expr}])/
     true 
   #when !/\b[^AOIUE]/
    # true
